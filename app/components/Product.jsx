@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { StarIcon } from "@heroicons/react/24/solid";
-import NumberFormat from "react-number-format";
+import { NumericFormat } from "react-number-format";
 
 export default function Product({
   id,
@@ -46,7 +46,7 @@ export default function Product({
       <p className="text-xs my-2 line-clamp-2">{description}</p>
 
       <div className="mb-5">
-        <NumberFormat
+        <NumericFormat
           value={price}
           displayType={"text"}
           thousandSeparator={true}
