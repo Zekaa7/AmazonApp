@@ -1,9 +1,7 @@
-"use client";
-
-import Image from "next/image";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { StarIcon } from "@heroicons/react/24/solid";
-import Currency from "react-currency-formatter";
+import NumberFormat from "react-number-format";
 
 export default function Product({
   id,
@@ -13,12 +11,10 @@ export default function Product({
   category,
   image,
 }) {
-  // Initialize state for rating and prime with useEffect to avoid hydration mismatch
   const [rating, setRating] = useState(0);
   const [hasPrime, setHasPrime] = useState(false);
 
   useEffect(() => {
-    // Generate random rating and prime status only on client-side
     setRating(Math.floor(Math.random() * (5 - 1 + 1)) + 1);
     setHasPrime(Math.random() < 0.5);
   }, []);
@@ -48,7 +44,12 @@ export default function Product({
       <p className="text-xs my-2 line-clamp-2">{description}</p>
 
       <div className="mb-5">
-        <Currency quantity={price} currency="GBP" />
+        <NumberFormat
+          value={price}
+          displayType={"text"}
+          thousandSeparator={true}
+          prefix={"£"}
+        />
       </div>
 
       {hasPrime && (
