@@ -2,6 +2,8 @@
 import Header from "./components/Header";
 import Banner from "./components/Banner";
 import ProductFeed from "./components/ProductFeed";
+import { Provider } from "react-redux";
+import { store } from "./store";
 
 async function fetchProducts() {
   try {
@@ -20,7 +22,7 @@ async function fetchProducts() {
 }
 
 export default async function Home() {
-  const products = await fetchProducts(); // Fetch products directly
+  const products = await fetchProducts();
 
   return (
     <div className="bg-gray-100">
