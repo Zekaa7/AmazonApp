@@ -29,7 +29,9 @@
     "app/components/Header.jsx",
     "app/api/auth/route.ts",
     "app/api/auth/[...nextauth]/route.js",
-    "app/pages/api/auth/[...nextauth].js"
+    "app/api/auth/[...nextauth].js",
+    "app/api/create-checkout-session/route.ts",
+    "app/api/webhook/route.js"
   ],
   "exclude": ["node_modules"]
 }
